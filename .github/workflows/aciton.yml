@@ -1,22 +1,13 @@
-name : yonghoon-app build
-run-name: ${{ github. actor }} has been added new commit.
-
-on:
-  push:
-      branches-ignore:
-        - 'main'
-
+name : Compress images
+on: pull_request
 jobs:
   build:
+    name: calibreapp/image-actions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout Repo
+        uses: actions/checkout@main
+      - name: Compress Images
+        uses: calibreapp/image-actions@main
         with:
-          node-version: 18
-      - name: 'install dependencies'
-        working-directory: ./yonghoon-app
-        run: npm ci
-      - name: 'build'
-        working-directory: ./yonghoon-app
-        run: npm run build
+          githubToken: ${{secrests.GITHUB_TOKEN}}
