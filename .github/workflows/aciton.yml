@@ -1,4 +1,4 @@
-name : chater7 build
+name : yonghoon-app build
 run-name: ${{ github. actor }} has been added new commit.
 
 on:
@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - name: 'install dependencies'
-        working-directory: ./chapter7/yonghoon-app
+        working-directory: ./yonghoon-app
         run: npm ci
       - name: 'build'
-        working-directory: ./chapter7/yonghoon-app
+        working-directory: ./yonghoon-app
         run: npm run build
