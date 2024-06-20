@@ -5,7 +5,7 @@ export default function MyDocument() {
   return (
     <Html lang='ko'>
       <Head />
-      <body className='123'>
+      <body>
         <Main />
         <NextScript />
       </body>
